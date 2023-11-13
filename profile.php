@@ -1,7 +1,6 @@
 <?php
 session_start();
-include("
-dbconnection.php");
+include("dbconnection.php");
 include("checklogin.php");
 check_login();
 if (isset($_POST['update'])) {
