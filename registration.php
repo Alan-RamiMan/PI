@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include("dbconnection.php");
+include("/dbconnection.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $name = $_POST['name'];
   $email = $_POST['email'];
