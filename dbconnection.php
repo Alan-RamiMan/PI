@@ -6,7 +6,7 @@ $DB_NAME = $_ENV["DB_NAME"];
 $DB_PORT = $_ENV["DB_PORT"];
 
 // Create connection
-$conn = mysqli_connect("$DB_HOST","$DB_USER","$DB_PASSWORD","$DB_NAME","$DB_PORT");
+$conn = mysqli_connect("$DB_HOST","$DB_USER","$DB_PASSWORD","$DB_NAME","$_DB_PORT");
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -14,5 +14,3 @@ if (!$conn) {
 echo "Connected successfully";
 mysqli_close($conn);
 ?>
-
-
