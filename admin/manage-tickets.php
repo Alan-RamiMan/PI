@@ -2,8 +2,8 @@
 session_start();
 //echo $_SESSION['id'];
 //$_SESSION['msg'];
-include("/app/dbconnection.php");
-include("/app/checklogin.php");
+include("dbconnection.php");
+include("checklogin.php");
 check_login();
 if (isset($_POST['update'])) {
   $adminremark = $_POST['aremark'];
@@ -35,10 +35,10 @@ if (isset($_POST['update'])) {
 </head>
 
 <body class="">
-  <?php include("/app/header.php"); ?>
+  <?php include("header.php"); ?>
   <div class="page-container row">
 
-    <?php include("/app/leftbar.php"); ?>
+    <?php include("leftbar.php"); ?>
 
     <div class="clearfix"></div>
   </div>

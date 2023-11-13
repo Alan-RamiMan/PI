@@ -2,8 +2,8 @@
 session_start();
 //echo $_SESSION['id'];
 //$_SESSION['msg'];
-include("/app/bconnection.php");
-include("/app/checklogin.php");
+include("dbconnection.php");
+include("checklogin.php");
 check_login();
 ?>
 <!DOCTYPE html>
@@ -33,9 +33,9 @@ check_login();
 <!-- BEGIN BODY -->
 
 <body class="">
-  <?php include("/app/header.php"); ?>
+  <?php include("header.php"); ?>
   <div class="page-container row">
-    <?php include("/app/leftbar.php"); ?>
+    <?php include("leftbar.php"); ?>
     <div class="clearfix"></div>
   </div>
   </div>

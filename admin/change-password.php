@@ -1,9 +1,10 @@
 <?php
 session_start();
 error_reporting(0);
-include("/app/checklogin.php");
+include("
+checklogin.php");
 check_login();
-include("/app/dbconnection.php");
+include("dbconnection.php");
 if (isset($_POST['change'])) {
   $oldpas = $_POST['oldpass'];
   $adminid = $_SESSION['id'];
@@ -73,9 +74,9 @@ if (isset($_POST['change'])) {
 </head>
 
 <body class="">
-  <?php include("/app/header.php"); ?>
+  <?php include("header.php"); ?>
   <div class="page-container row-fluid">
-    <?php include("/app/leftbar.php"); ?>
+    <?php include("leftbar.php"); ?>
     <div class="clearfix"></div>
   </div>
   </div>

@@ -2,8 +2,8 @@
 session_start();
 //echo $_SESSION['id'];
 //$_SESSION['msg'];
-include("/app/dbconnection.php");
-include("/app/checklogin.php");
+include("dbconnection.php");
+include("checklogin.php");
 check_login();
 if (isset($_POST['send'])) {
     $count_my_page = ("hitcounter.txt");
@@ -52,9 +52,9 @@ if (isset($_POST['send'])) {
 </head>
 
 <body class="">
-    <?php include("/app/header.php"); ?>
+    <?php include("header.php"); ?>
     <div class="page-container row-fluid">
-        <?php include("/app/leftbar.php"); ?>
+        <?php include("leftbar.php"); ?>
         <div class="clearfix"></div>
         <!-- END SIDEBAR MENU -->
     </div>
