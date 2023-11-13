@@ -1,8 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include("
-checklogin.php");
+include("checklogin.php");
 check_login();
 include("dbconnection.php");
 if (isset($_POST['change'])) {
