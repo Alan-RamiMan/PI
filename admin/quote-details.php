@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("dbconnection.php");
-include("checklogin.php");
+include("/app/dbconnection.php");
+include("/app/checklogin.php");
 check_login();
 if (isset($_POST['remark'])) {
 	$msg = mysqli_query($con, "update prequest set remark='" . $_POST['adminremark'] . "' where id='" . $_GET['id'] . "'");
@@ -32,11 +32,11 @@ if (isset($_POST['remark'])) {
 </head>
 
 <body class="">
-	<?php include("header.php"); ?>
+	<?php include("/app/header.php"); ?>
 
 	<div class="page-container row">
 
-		<?php include("leftbar.php"); ?>
+		<?php include("/app/leftbar.php"); ?>
 
 		<div class="clearfix"></div>
 		<!-- END SIDEBAR MENU -->

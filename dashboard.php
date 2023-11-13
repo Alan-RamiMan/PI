@@ -1,8 +1,8 @@
 <?php
 session_start();
-include("checklogin.php");
+include("/app/checklogin.php");
 check_login();
-include("dbconnection.php");
+include("/app/dbconnection.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,9 +26,9 @@ include("dbconnection.php");
 </head>
 
 <body class="">
-  <?php include("header.php"); ?>
+  <?php include("/app/header.php"); ?>
   <div class="page-container row-fluid">
-    <?php include("leftbar.php"); ?>
+    <?php include("/app/leftbar.php"); ?>
     <div class="clearfix"></div>
   </div>
   </div>

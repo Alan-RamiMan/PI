@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("dbconnection.php");
-include("checklogin.php");
+include("/app/dbconnection.php");
+include("/app/checklogin.php");
 check_login();
 ?>
 <!DOCTYPE html>
@@ -26,10 +26,10 @@ check_login();
 </head>
 
 <body class="">
-    <?php include("header.php"); ?>
+    <?php include("/app/header.php"); ?>
     <div class="page-container row">
 
-        <?php include("leftbar.php"); ?>
+        <?php include("/app/leftbar.php"); ?>
 
         <div class="clearfix"></div>
         <!-- END SIDEBAR MENU -->
