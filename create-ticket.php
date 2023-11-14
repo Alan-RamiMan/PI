@@ -6,7 +6,7 @@ include("dbconnection.php");
 include("checklogin.php");
 check_login();
 if (isset($_POST['send'])) {
-    $count_my_page = ("hitcounter.txt");
+    $count_my_page = ("/hitcounter.txt");
     $hits = file($count_my_page);
     $hits[0]++;
     $fp = fopen($count_my_page, "w");
