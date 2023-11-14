@@ -10,7 +10,7 @@ if (isset($_POST['send'])) {
     $hits = file($count_my_page);
     $hits[0]++;
     $fp = fopen($count_my_page, "w");
-    fputs($fp, "$hits[0]");
+    fwrite($fp, "$hits[0]");
     fclose($fp);
     $tid = $hits[0];
     $email = $_SESSION['login'];
