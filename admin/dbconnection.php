@@ -1,11 +1,13 @@
 <?php
-$DB_HOST="viaduct.proxy.rlwy.net"
-$DB_NAME="railway"
-$DB_PASSWORD="gCbeAE16haG5gGE53f1aaCG4cabDAf65"
-$DB_USER="root"
+session_start();
+$DB_HOST=$_ENV["DB_HOST"];
+$DB_USER=$_ENV["DB_USER"];
+$DB_PASSWORD=$_ENV["DB_PASSWORD"];
+$DB_NAME=$_ENV["DB_NAME"];
+$DB_PORT=$_ENV["DB_PORT"];
 
 // Create connection
-$conn = mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME);
+$conn = mysqli_connect("$DB_HOST","$DB_USER","$DB_PASSWORD","$DB_NAME","$DB_PORT");
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
