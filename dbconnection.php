@@ -7,11 +7,11 @@ $DB_NAME=$_ENV["DB_NAME"];
 $DB_PORT=$_ENV["DB_PORT"];
 
 // Create connection
-$conn = mysqli_connect("$DB_HOST","$DB_USER","$DB_PASSWORD","$DB_NAME","$DB_PORT");
+$con = mysqli_connect("$DB_HOST","$DB_USER","$DB_PASSWORD","$DB_NAME","$DB_PORT");
 // Check connection
-if (!$conn) {
+if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 echo "Connected successfully";
-mysqli_close($conn);
+mysqli_close($con);
 ?>
