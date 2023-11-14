@@ -1,9 +1,9 @@
 <?php
 session_start();
 error_reporting(0);
-include("/checklogin.php");
+include("checklogin.php");
 check_login();
-include("/dbconnection.php");
+include("dbconnection.php");
 if (isset($_POST['change'])) {
     $sql = mysqli_query($con, "SELECT password FROM  user where password='" . $_POST['oldpass'] . "' && email='" . $_SESSION['login'] . "'");
     $num = mysqli_fetch_array($sql);

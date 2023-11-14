@@ -1,9 +1,7 @@
 <?php
 session_start();
 error_reporting();
-include("
-
-dbconnection.php");
+include("dbconnection.php");
 if (isset($_POST['submit'])) {
   $row1 = mysqli_query($con, "select email,password from user where email='" . $_POST['email'] . "'");
   $row2 = mysqli_fetch_array($row1);

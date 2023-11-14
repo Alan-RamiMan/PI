@@ -39,8 +39,7 @@ check_login();
 </head>
 
 <body class="">
-	<?php include("
-	header.php"); ?>
+	<?php include("header.php"); ?>
 	<div class="page-container row">
 
 		<?php include("leftbar.php"); ?>
