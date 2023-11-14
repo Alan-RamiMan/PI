@@ -9,11 +9,12 @@ $DB_PORT=$_ENV["DB_PORT"];
 
 
 // Create connection
-$con = mysqli_connect("$DB_HOST","$DB_USER","$DB_PASSWORD","$DB_NAME","$DB_PORT");
+$con = new mysqli("$DB_HOST","$DB_USER","$DB_PASSWORD","$DB_NAME","$DB_PORT");
 // Check connection
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
+// Verificar la conexión
+if ($con->connect_error) {
+    die("Conexión fallida: " . $con->connect_error);
 }
-// echo "Connected successfully";
-mysqli_close($con);
+
+echo "Conexión establecida correctamente";
 ?>
