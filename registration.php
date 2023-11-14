@@ -11,12 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $query = mysqli_query($con, "select email from user where email='$email'");
   $num = mysqli_fetch_array($query);
   if ($num > 1) {
-    echo "<script>alert('Correo electrónico ya registrado con nosotros. Intente con una identificación de correo electrónico diferente.');</script>";
-    echo "<script>window.location.href='registration.php'</script>";
+    // echo "<script>alert('Correo electrónico ya registrado con nosotros. Intente con una identificación de correo electrónico diferente.');</script>";
+    // echo "<script>window.location.href='registration.php'</script>";
   } else {
     mysqli_query($con, "insert into user(name,email,password,mobile,gender) values('$name','$email','$password','$mobile','$gender')");
-    echo "<script>alert('Tu cuenta ha sido creada correctamente');</script>";
-    echo "<script>window.location.href='login.php'</script>";
+    // echo "<script>alert('Tu cuenta ha sido creada correctamente');</script>";
+    // echo "<script>window.location.href='login.php'</script>";
   }
 }
 ?>
