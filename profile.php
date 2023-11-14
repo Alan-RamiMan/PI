@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("/app/dbconnection.php");
-include("/app/checklogin.php");
+include("dbconnection.php");
+include("checklogin.php");
 check_login();
 if (isset($_POST['update'])) {
     $name = $_POST['name'];
@@ -40,9 +40,9 @@ if (isset($_POST['update'])) {
 </head>
 
 <body class="">
-    <?php include("/app/header.php"); ?>
+    <?php include("header.php"); ?>
     <div class="page-container row-fluid">
-        <?php include("/app/leftbar.php"); ?>
+        <?php include("leftbar.php"); ?>
         <div class="clearfix"></div>
     </div>
     </div>

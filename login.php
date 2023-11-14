@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include("/app/dbconnection.php");
+include("dbconnection.php");
 if (isset($_POST['login'])) {
   $ret = mysqli_query($con, "SELECT * FROM user WHERE email='" . $_POST['email'] . "' and password='" . $_POST['password'] . "'");
   $num = mysqli_fetch_array($ret);
