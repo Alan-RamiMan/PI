@@ -1,33 +1,43 @@
 <?php
 session_start();
-//echo $_SESSION['id'];
-//$_SESSION['msg'];
 include("dbconnection.php");
 include("checklogin.php");
 check_login();
+
 if (isset($_POST['send'])) {
-    $count_my_page = ("hitcounter.txt");
+    // Contador de hits
+    $count_my_page = "hitcounter.txt";
     $hits = file($count_my_page);
     $hits[0]++;
     $fp = fopen($count_my_page, "w");
     fwrite($fp, "$hits[0]");
     fclose($fp);
     $tid = $hits[0];
+
+    // Datos del formulario
     $email = $_SESSION['login'];
-    $subject = $_POST['subject'];
-    $tt = $_POST['tasktype'];
-    $priority = $_POST['priority'];
-    $ticket = $_POST['description'];
-    //$ticfile=$_FILES["tfile'"]["name"];
+    $subject = mysqli_real_escape_string($con, $_POST['subject']);
+    $tt = mysqli_real_escape_string($con, $_POST['tasktype']);
+    $priority = mysqli_real_escape_string($con, $_POST['priority']);
+    $ticket = mysqli_real_escape_string($con, $_POST['description']);
     $st = "Open";
     $pdate = date('Y-m-d');
-    //move_uploaded_file($_FILES["tfile"]["tmp_name"],"ticketfiles/".$_FILES["tfile"]["name"]);
-    $a = mysqli_query($con, "insert into ticket(ticket_id,email_id,subject,task_type,prioprity,ticket,status,posting_date)  values('$tid','$email','$subject','$tt','$priority','$ticket','$st','$pdate')");
+
+    // Insertar en la base de datos
+    $a = mysqli_query($con, "INSERT INTO ticket(ticket_id, email_id, subject, task_type, prioprity, ticket, status, posting_date) VALUES ('$tid', '$email', '$subject', '$tt', '$priority', '$ticket', '$st', '$pdate')");
+
     if ($a) {
-        echo "<script>alert('Ticket Registrado Correctamente'); location.replace(document.referrer)</script>";
+        $_SESSION['msg'] = 'Ticket registrado correctamente';
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
+    } else {
+        $_SESSION['msg'] = 'Error al registrar el ticket';
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
