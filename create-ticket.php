@@ -6,7 +6,7 @@ check_login();
 
 if (isset($_POST['send'])) {
     // Contador de hits
-    $count_my_page = "hitcounter.txt";
+    $count_my_page = __DIR__ . "/hitcounter.txt";
     $hits = file($count_my_page);
     $hits[0]++;
     $fp = fopen($count_my_page, "w");
@@ -37,6 +37,7 @@ if (isset($_POST['send'])) {
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
